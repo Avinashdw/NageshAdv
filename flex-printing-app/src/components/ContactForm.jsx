@@ -17,24 +17,51 @@ const ContactForm = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setStatus({ type: '', message: '' });
 
+        // Prepare WhatsApp message (will be used regardless of API success)
+        const whatsappMessage = `*New Enquiry from Website*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email || 'Not provided'}%0A*Requirement:* ${formData.message}`;
+        const whatsappURL = `https://wa.me/917218406303?text=${whatsappMessage}`;
+
         try {
-            // Static approach: Redirect to WhatsApp with pre-filled message
-            const whatsappMessage = `*New Enquiry from Website*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email || 'Not provided'}%0A*Requirement:* ${formData.message}`;
-            const whatsappURL = `https://wa.me/917218406303?text=${whatsappMessage}`;
+            // 1. Send Email via Web3Forms API
+            // Replace 'YOUR_WEB3FORMS_ACCESS_KEY' with your actual key from web3forms.com
+            const web3formsKey = 'YOUR_WEB3FORMS_ACCESS_KEY';
 
-            // Open WhatsApp in a new tab
-            window.open(whatsappURL, '_blank');
+            if (web3formsKey && web3formsKey !== 'YOUR_WEB3FORMS_ACCESS_KEY') {
+                const emailData = {
+                    access_key: web3formsKey,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    subject: `New Enquiry from ${formData.name}`,
+                    from_name: 'Nagesh Advertising Website'
+                };
+                await axios.post('https://api.web3forms.com/submit', emailData);
+            }
 
-            setStatus({ type: 'success', message: 'Opening WhatsApp to send your enquiry. Thank you!' });
-            setFormData({ name: '', email: '', phone: '', message: '' });
+            // 2. Notify user and redirect
+            setStatus({ type: 'success', message: 'Enquiry received! Redirecting to WhatsApp for quick chat...' });
+
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+                setStatus({ type: '', message: '' });
+            }, 1500);
+
         } catch (error) {
-            console.error(error);
-            setStatus({ type: 'danger', message: 'Something went wrong. Please try again or call us directly.' });
+            console.error('Email API Error:', error);
+            // Even if email fails, we still want to redirect to WhatsApp so the user doesn't lose the lead
+            setStatus({ type: 'warning', message: 'Email notification failed, but you can still contact us via WhatsApp.' });
+
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+            }, 2000);
         } finally {
             setLoading(false);
         }

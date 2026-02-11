@@ -23,7 +23,6 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </ErrorBoundary>
         <Footer />
