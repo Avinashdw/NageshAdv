@@ -5,9 +5,6 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import AdminLogin from './pages/AdminLogin';
-import AdminDashboard from './pages/AdminDashboard';
-import ProtectedRoute from './components/ProtectedRoute';
 import Footer from './components/Footer'; // Expecting Footer component
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -26,15 +23,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route
-              path="/admin/dashboard"
-              element={
-                <ProtectedRoute>
-                  <AdminDashboard />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </ErrorBoundary>
         <Footer />

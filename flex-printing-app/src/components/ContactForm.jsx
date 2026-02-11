@@ -17,22 +17,24 @@ const ContactForm = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true);
         setStatus({ type: '', message: '' });
 
         try {
-            // In development, the backend is likely on port 5000
-            // Ensure you have a proxy set up in vite.config.js or use full URL
-            const response = await axios.post('/api/contact', formData);
-            if (response.data.success) {
-                setStatus({ type: 'success', message: 'Message sent successfully! We will contact you soon.' });
-                setFormData({ name: '', email: '', phone: '', message: '' });
-            }
+            // Static approach: Redirect to WhatsApp with pre-filled message
+            const whatsappMessage = `*New Enquiry from Website*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email || 'Not provided'}%0A*Requirement:* ${formData.message}`;
+            const whatsappURL = `https://wa.me/917218406303?text=${whatsappMessage}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+
+            setStatus({ type: 'success', message: 'Opening WhatsApp to send your enquiry. Thank you!' });
+            setFormData({ name: '', email: '', phone: '', message: '' });
         } catch (error) {
             console.error(error);
-            setStatus({ type: 'danger', message: 'Failed to send message. Please try again later.' });
+            setStatus({ type: 'danger', message: 'Something went wrong. Please try again or call us directly.' });
         } finally {
             setLoading(false);
         }
