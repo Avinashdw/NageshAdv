@@ -78,10 +78,10 @@ const Contact = () => {
                             <div className="mt-4">
                                 <h5 className="fw-bold mb-3">Follow Us</h5>
                                 <div className="d-flex gap-3">
-                                    <a href="https://www.facebook.com/Nageshwaghmare" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }} aria-label="Facebook">
+                                    <a href="https://www.facebook.com/share/1Ae5kqvt3d/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }} aria-label="Facebook">
                                         <FaFacebook size={20} />
                                     </a>
-                                    <a href="https://www.instagram.com/Nageshwaghmare" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }} aria-label="Instagram">
+                                    <a href="https://www.instagram.com/nagesh_waghmare_advertising?igsh=eTh1bGFjdjl2NDZh" target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }} aria-label="Instagram">
                                         <FaInstagram size={20} />
                                     </a>
                                     <a href="https://wa.me/917218406303?text=Thank%20you%20for%20contacting%20Nagesh%20Advertising%2C%0AHow%20can%20I%20help%20you" target="_blank" rel="noopener noreferrer" className="btn btn-outline-success rounded-circle d-flex align-items-center justify-content-center" style={{ width: '45px', height: '45px' }} aria-label="WhatsApp">

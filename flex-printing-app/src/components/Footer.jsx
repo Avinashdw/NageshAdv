@@ -34,11 +34,11 @@ const Footer = () => {
                         <p className="text-secondary">Mon - Sat: 9:00 AM - 8:00 PM</p>
                         <p className="text-secondary">Sunday: Closed</p>
                         <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
-                            <a href="https://www.facebook.com/Nageshwaghmare" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <a href="https://www.facebook.com/share/1Ae5kqvt3d/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                 <FaFacebook size={24} className="text-secondary hover-primary cursor-pointer" />
                             </a>
 
-                            <a href="https://www.instagram.com/Nageshwaghmare" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <a href="https://www.instagram.com/nagesh_waghmare_advertising?igsh=eTh1bGFjdjl2NDZh" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                 <FaInstagram size={24} className="text-secondary hover-primary cursor-pointer" />
                             </a>
 
