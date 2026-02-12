@@ -90,6 +90,103 @@ const Services = () => {
                     ))}
                 </Row>
 
+                {/* Rental Services Section */}
+                <div className="mb-5">
+                    <Row className="justify-content-center mb-4">
+                        <Col lg={8} className="text-center">
+                            <h2 className="fw-bold display-6">Rental Services</h2>
+                            <p className="lead text-secondary">We provide premium advertising structures on rent for maximum visibility.</p>
+                        </Col>
+                    </Row>
+                    <Row className="g-5 align-items-center mb-5">
+                        <Col lg={6}>
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="overflow-hidden rounded-4 shadow-lg"
+                            >
+                                <img
+                                    src="https://i.pinimg.com/736x/c7/1d/5e/c71d5e5d955eb925707cfff20afb5b46.jpg"
+                                    alt="Flex Frames on Rent"
+                                    className="img-fluid w-100 object-fit-cover"
+                                    style={{ height: '350px' }}
+                                />
+                            </motion.div>
+                        </Col>
+                        <Col lg={6}>
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="ps-lg-4"
+                            >
+                                <div className="d-flex align-items-center mb-3">
+                                    <div className="bg-primary text-white p-3 rounded-circle me-3">
+                                        <FaLayerGroup size={24} />
+                                    </div>
+                                    <h3 className="fw-bold mb-0">Flex Frames on Rent</h3>
+                                </div>
+                                <p className="text-secondary mb-4 fs-5">
+                                    Sturdy and durable iron frames available for rent. Perfect for exhibitions, roadshows, and temporary hoardings.
+                                    We handle transportation, installation, and dismantling.
+                                </p>
+                                <ul className="list-unstyled text-secondary mb-4">
+                                    <li className="mb-2">✅ Available in various standard sizes</li>
+                                    <li className="mb-2">✅ Weather-resistant structure</li>
+                                    <li className="mb-2">✅ Quick setup and removal</li>
+                                </ul>
+                            </motion.div>
+                        </Col>
+                    </Row>
+
+                    <Row className="g-5 align-items-center flex-lg-row-reverse mb-5">
+                        <Col lg={6}>
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="overflow-hidden rounded-4 shadow-lg"
+                            >
+                                <img
+                                    src="https://i.pinimg.com/736x/23/8a/08/238a08010544763573f30a92cd9e0668.jpg"
+                                    alt="Large Hoardings on Rent"
+                                    className="img-fluid w-100 object-fit-cover"
+                                    style={{ height: '350px' }}
+                                />
+                            </motion.div>
+                        </Col>
+                        <Col lg={6}>
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="pe-lg-4"
+                            >
+                                <div className="d-flex align-items-center mb-3">
+                                    <div className="bg-primary text-white p-3 rounded-circle me-3">
+                                        <FaImage size={24} />
+                                    </div>
+                                    <h3 className="fw-bold mb-0">Large Hoardings on Rent</h3>
+                                </div>
+                                <p className="text-secondary mb-4 fs-5">
+                                    Prime location hoardings available for high-impact brand visibility.
+                                    Secure your spot in high-traffic areas to maximize your reach.
+                                </p>
+                                <ul className="list-unstyled text-secondary mb-4">
+                                    <li className="mb-2">✅ Strategic high-traffic locations</li>
+                                    <li className="mb-2">✅ Large format for maximum visibility</li>
+                                    <li className="mb-2">✅ Flexible rental duration</li>
+                                </ul>
+                            </motion.div>
+                        </Col>
+                    </Row>
+                </div>
+
                 {/* Pricing Section */}
                 <Row className="justify-content-center mt-5">
                     <Col lg={8}>
